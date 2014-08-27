@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+<div id="b" style=" height: 500px; width: 500px; margin: 0 auto; background-color: black;">
+    <div id="item"><img id="item0" src="../source/image/tortoise.png"/></div>
+</div>
+
+</body>
+</html>
+
+<script src="../lib/jquery-1.11.1.min.js"></script>
+<script src="../class/ted_item.js"></script>
+
+
+<script>
+
+    var item1 = new TEDItem();
+    item1.setItem("item0");
+    item1.setSpeed(5);
+    item1.setTiming("50");
+    item1.setMaxSize(200);
+    item1.setMinSize(100);
+    item1.start();
+
+    var currentItem = item1;
+
+
+    $("body").mousedown(function (e) {
+        if (currentItem.isRunning()) {
+            currentItem.stop();
+        } else {
+            currentItem.start();
+        }
+        alert($('#item0').width());
+
+    })
+
+
+</script>
